@@ -62,7 +62,6 @@ This project is a real-time tracking and visualization system that processes pos
 - Python 3+
 
 #### Steps:
-   ```
 1. Run the script:
    ```sh
    python script.py
