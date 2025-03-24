@@ -44,7 +44,7 @@ const HeatmapComponent = () => {
     // Prepare data for heatmap.js
     const points = data.map((point) => ({
       x: Math.floor((point.posX / maxX) * containerWidth), 
-      y: Math.floor((point.posY / maxY) * containerHeight), 
+      y: Math.floor(((maxY - point.posY) / maxY) * containerHeight), // Inverted y-axis
       value: point.intensity,
     }));
 
@@ -110,8 +110,8 @@ const HeatmapComponent = () => {
     yAxis.style.alignItems = "center";
     yAxis.style.padding = "10px 0";
 
-    // Add y-axis labels (6 divisions)
-    const yLabels = Array.from({ length: 6 }, (_, i) => ((maxY / 5) * i).toFixed(2)); // 6 divisions
+    // Add y-axis labels (6 divisions, inverted order)
+    const yLabels = Array.from({ length: 6 }, (_, i) => ((maxY / 5) * (5 - i)).toFixed(2)); // Inverted order
     yLabels.forEach((label) => {
       const labelElement = document.createElement("span");
       labelElement.innerText = label;
