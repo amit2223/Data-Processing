@@ -62,17 +62,10 @@ This project is a real-time tracking and visualization system that processes pos
 - Python 3+
 
 #### Steps:
-1. Navigate to the data-ingestion folder:
-   ```sh
-   cd data-ingestion
    ```
-2. Install dependencies:
+1. Run the script:
    ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the script:
-   ```sh
-   python send_data.py
+   python script.py
    ```
 
 ## API Endpoints
